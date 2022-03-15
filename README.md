@@ -48,9 +48,10 @@ flowchart LR
     subclust ---> fig4[Figure 4]
     
     agg ---> ip[Infusion product clustering]
-    ip ---> fig6[Figure 6]
+    ip ---> fig5[Figure 5]
+    deng[Deng et al. 2020 re-analysis] ---> fig5
     
-    retreat[Re-treatment analysis] ---> fig5[Figure 5]
+    retreat[Re-treatment analysis] ---> fig6[Figure 6]
 
 ```
 
