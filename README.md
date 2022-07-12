@@ -1,32 +1,31 @@
 # Haradhvala_et_al_2022
 
-Scripts to generate figures presented in paper are stored in figures/
-Analyses
+This repository contains code used to produce the results in Haradhvala, Leick, Maurer, Gohil et al. Nature Medicine 2022. 
 
-```mermaid
-flowchart LR
-    agg[Data Agg] --> global[Global clustering]
-    global ---> fig1[Figure 1]
+## Data download
 
-    global ---> classification[T cell classification]
-    classification ---> preppseudo[Pseudobulk calculation]
-    
-    subgraph ide1 [Pseudobulk]
-    preppseudo ---> limma[Limma]
-    limma ---> fig2[Figure2]
-    end
+Gene expression matrices for this project are available at GEO (accession GSE197268). Raw data is available on dbGaP (accession pending). Clinical and other metadata are available in Supplementary tables 1-2 of our paper.
 
-    classification ---> cellcycle[Cell Cycle Analysis]
-    cellcycle ---> fig3[Figure 3]
+## Analysis
 
-    cellcycle ---> subclust[CAR-T subclustering]
-    subclust ---> fig4[Figure 4]
-    
-    agg ---> ip[Infusion product clustering]
-    ip ---> fig5[Figure 5]
-    deng[Deng et al. 2020 re-analysis] ---> fig5
-    
-    retreat[Re-treatment analysis] ---> fig6[Figure 6]
+### Pre-processing and clustering.
 
-```
+The preprocessing/ subfolder contains the code run to produce clustered anndata objects. Due to several steps involving randomization the results if re-run in another environment may be very subtly different, the exact annotated versions used in our analyses are available on GEO.
+
+- IP_clustering.py produces an infusion-product-specific clustering of cells
+- pbmc_clustering.py clusters PBMC populations from baseline and day 7 post-treatment (both CAR+ and CAR-)
+- global_cluster.py clusters all cells in our dataset together
+- retreatment_cluster.py clusters just the six samples from a patient treated with two infusions of tisa-cel
+
+### T-cell annotation
+
+We used the following notebooks in the Tcell_analyses/ subfolder to annotate various properties of the T-cells in our dataset
+
+- T_cell_cycle.ipynb scores T-cells for cell cycle
+- T_CD_classification.ipynb categorizes T-cells into CD4 and CD8 subsets
+- T_sorting.ipynb performed "pseudo-flow" sorting of our T-cells into classical differentiation subsets
+
+### Figures
+
+Jupyter notebooks figures/Figure[1-6].ipynb can be run to produce figure panels related to scRNA analysis. 
 
