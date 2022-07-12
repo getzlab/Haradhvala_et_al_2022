@@ -21,8 +21,8 @@ The preprocessing/ subfolder contains the code run to produce clustered anndata 
 
 We used the following notebooks in the Tcell_analyses/ subfolder to annotate various properties of the T-cells in our dataset
 
-- T_cell_cycle.ipynb scores T-cells for cell cycle
-- T_CD_classification.ipynb categorizes T-cells into CD4 and CD8 subsets
+- T_cell_cycle.py scores T-cells for cell cycle
+- T_CD4_CD8_classification.ipynb categorizes T-cells into CD4 and CD8 subsets
 - T_sorting.ipynb performed "pseudo-flow" sorting of our T-cells into classical differentiation subsets
 
 ### Figures
