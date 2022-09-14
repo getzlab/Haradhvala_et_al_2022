@@ -31,7 +31,7 @@ def get_pseudobulk(adata,id_vars,clin_vars,min_cells=25,cpm_thresh=0,min_pat=5,m
     # Apply min patient filter
     genes = Xsum.columns[(len(id_vars)+len(clin_vars)):]
     cpm = 1e6*(Xsum.loc[:,genes].T / Xsum.loc[:,genes].T.sum()).T
-    nexp = (cpm>min_cpm).sum()
+    nexp = (cpm>min_pat_cpm).sum()
     Xsum = Xsum[list(id_vars)+list(clin_vars)+list(genes[nexp>=min_pat])]
 
     return(Xsum)
