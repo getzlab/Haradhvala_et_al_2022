@@ -4,7 +4,9 @@ This repository contains code used to produce the results in Haradhvala, Leick, 
 
 ## Data download
 
-Gene expression matrices for this project are available at GEO (accession GSE197268). Raw data is available on dbGaP (accession pending). Clinical and other metadata are available in Supplementary tables 1-2 of our paper.
+Gene expression matrices for this project are available at GEO (accession GSE197268). Raw data is available on dbGaP (accession phs002922). Clinical and other metadata are available in Supplementary tables 1-2 of our paper. Cell-level metadata and clustered anndata objects are available at the link below.
+
+https://drive.google.com/drive/folders/1vw7J8HqUX22ICZmJ0UjAYEBpVjRJ9U9-?usp=sharing
 
 ## Analysis
 
