@@ -49,7 +49,7 @@ S.loc[(S['eY']+1)/(S['eX']+1) > .5,'gender'] = 'male'
 adata.obs=adata.obs.join(S[['gender']],on='barcode',how='left')
 
 
-adata.obs['subtype'] = pd.read_csv('../data/ALLT_subtypes_annotated_obs.txt')
+adata.obs['subtype'] = pd.read_csv('../data/ALLT_CD_classifications.txt')
 adata.obs['type']=adata.obs['timepoint'].astype(str)
 adata.obs.loc[adata.obs['CAR']&adata.obs['timepoint'].str.match('D7'),'type'] = 'D7-CAR-T'
 adata.obs.loc[~adata.obs['CAR']&(adata.obs['timepoint']=="D7-CART"),'type'] = 'Unknown'
