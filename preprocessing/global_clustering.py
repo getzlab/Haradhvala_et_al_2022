@@ -8,7 +8,7 @@ sc.set_figure_params(dpi=120)
 import matplotlib as mpl
 mpl.rcParams['pdf.fonttype'] = 42
 
-input_h5ad = "gs://ibm-cart-0/analysis/may2021/CART_may2021_raw.v3.h5ad"
+input_h5ad = "../data/CART_raw_data.h5ad"
 
 # Load data
 adata = read_h5ad_gs(input_h5ad)
